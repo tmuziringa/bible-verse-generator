@@ -1,5 +1,5 @@
 function displayVerse(response){
-    console.log("verse generated")
+    
 new Typewriter("#verse", {
   strings: response.data.answer,
   autoStart: true,
@@ -23,9 +23,7 @@ function generateVerse(event){
 let verseElement=document.querySelector("#verse");
 verseElement.classList.remove("hidden");
 verseElement.innerHTML=`<div class="blink">Retrieving verses relating to ${instructionInput.value}</div>`;
-    console.log("generating verse");
-console.log(`Prompt:${prompt}`);
-console.log(`Context:${context}`)
+    
 
     axios.get(apiUrl).then(displayVerse)
 
